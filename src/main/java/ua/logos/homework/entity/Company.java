@@ -7,6 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+
 @Entity
 @Table(name = "company")
 public class Company extends BaseEntity {
@@ -19,5 +27,19 @@ public class Company extends BaseEntity {
 	
 	@OneToMany(mappedBy = "company")
 	private List<Person> persons;
+
+	public void setNameCompany(String nameCompany) {
+		this.nameCompany = nameCompany;
+	}
+
+	public void setWorkers(int workers) {
+		this.workers = workers;
+	}
+
+	public void setPersons(List<Person> persons) {
+		this.persons = persons;
+	}
+	
+	
 
 }
