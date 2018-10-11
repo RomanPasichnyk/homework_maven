@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,6 +43,11 @@ public class Company extends BaseEntity {
 		this.persons = persons;
 	}
 	
-	
+	@ManyToMany
+	@JoinTable(name = "company_country",
+			joinColumns = @JoinColumn(name = "company_id"),
+			inverseJoinColumns = @JoinColumn(name = "country_id")
+	)
+	private List<Country> countries;
 
 }

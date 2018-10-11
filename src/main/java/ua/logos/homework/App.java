@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import ua.logos.homework.entity.Company;
+import ua.logos.homework.entity.Work;
 
 public class App {
 	public static void main(String[] args) {
@@ -14,10 +15,10 @@ public class App {
 		
 		em.getTransaction().begin();
 		
-		Company company = new Company();
-		company.setNameCompany("Logos");
-		company.setWorkers(1250);
-		em.persist(company);
+		Work work = new Work();
+		work.setWorkName("Java Developer");
+		work.setSalary(1204);
+		em.persist(work);
 		
 		em.getTransaction().commit();
 		em.close();

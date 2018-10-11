@@ -23,8 +23,9 @@ public class Work extends BaseEntity {
 	@Column(name = "work_name", length = 120, nullable = false, unique = true)
 	private String workName;
 	
-	@Column(columnDefinition = "Decimal(5,2)", nullable = false)
-	private BigDecimal salary;
+//	@Column(columnDefinition = "Decimal(5,2)", nullable = true)
+	@Column(columnDefinition = "INT", nullable = true)
+	private int salary;
 	
 	@OneToMany(mappedBy = "work")
 	private List<Person> persons;	

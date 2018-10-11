@@ -39,7 +39,6 @@ public class Person extends BaseEntity{
 	@JoinColumn(name = "company_id")
 	private Company company;
 	
-	@OneToOne
-	@JoinColumn(name = "person_details_id")
+	@OneToOne(mappedBy = "person")
 	private PersonDetails personDetails;
 }
